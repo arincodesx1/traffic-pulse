@@ -63,8 +63,10 @@ function Index() {
     return <LocationLoading />;
   }
 
-  if (geoStatus !== "granted" || !coords) {
-    return <LocationError status={geoStatus} onRetry={retry} />;
+  if (!coords) {
+    // "granted" without coordinates can't happen, but satisfies the type.
+    const errorStatus = geoStatus === "granted" ? "unavailable" : geoStatus;
+    return <LocationError status={errorStatus} onRetry={retry} />;
   }
 
   const initialLoading = backendStatus === "connecting" && !data;
