@@ -17,7 +17,7 @@ export function StatusHeader({ backendStatus, isRefreshing }: StatusHeaderProps)
           <Radar className="h-4.5 w-4.5" />
         </div>
         <div className="leading-tight">
-          <h1 className="font-display text-base font-700 font-bold tracking-tight text-foreground">
+          <h1 className="font-display text-base font-bold tracking-tight text-foreground">
             TrafficAI
           </h1>
           <p className="hidden text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground sm:block">
